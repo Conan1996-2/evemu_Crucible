@@ -1,11 +1,28 @@
-<p>UPDATE* for Ubuntu 24.04</p>
-<p>git clone https://github.com/EvEmu-Project/evemu_Crucible</p>
-<p>cd evemu_Crucible</p>
-<p>sudo apt-get update && sudo apt upgrade && sudo apt install build-essential g++ cmake git libtinyxml2.6.2v5-dbg libtinyxml2.6.2 libmysql zlib1g-dev zlib1g-dbg libboost1.54</p>
-<p>sudo apt install -y git build-essential autoconf automake libtool pkg-config libudev-dev</p>
-<p>>cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=dist -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ ..</p>
-<p>make -j(cpu count)</p>
-<p>make install</p>
+# UPDATE* for Ubuntu 24.04
+Database
+```
+CREATE DATABASE IF NOT EXISTS `evemu`;
+CREATE USER 'evemu'@'localhost' IDENTIFIED BY 'YOURPASSWORD';
+GRANT ALL PRIVILEGES ON `evemu` . * TO 'evemu'@'localhost';
+FLUSH PRIVILEGES;
+EXIT;
+```
+
+Compiling
+```
+git clone https://github.com/EvEmu-Project/evemu_Crucible
+cd evemu_Crucible
+sudo apt-get update && sudo apt upgrade && sudo apt install build-essential g++ cmake git libtinyxml2.6.2v5-dbg libtinyxml2.6.2 libmysql zlib1g-dev zlib1g-dbg libboost1.54
+sudo apt install -y git build-essential autoconf automake libtool pkg-config libudev-dev
+>cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=dist -DCMAKE_C_COMPILER=/usr/bin/gcc -DCMAKE_CXX_COMPILER=/usr/bin/g++ ..
+make -j(cpu count)
+make install
+cd ../sql
+./get_evedbtool.sh
+./evedbtool
+./evedbtool install
+
+```
 
 # [EVEmu](https://evemu.dev) - An EVE Online Emulator
 
