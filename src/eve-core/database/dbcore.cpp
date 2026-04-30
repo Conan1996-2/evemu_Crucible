@@ -109,7 +109,7 @@ void DBcore::Connect(uint* errnum, char* errbuf)
     sLog.Error(" DataBase Manager", "Connection Timeout Option Failed");
 */
     if (pReconnect) {
-        my_bool reconnect = true;
+        bool reconnect = true;
         if (mysql_options(mysql, MYSQL_OPT_RECONNECT, (void*)&reconnect) == 0) // this will enable auto-reconnect...and render my Reconnect() worthless
             sLog.Green(" DataBase Manager", "DataBase AutoReconnect Enabled");
         else
