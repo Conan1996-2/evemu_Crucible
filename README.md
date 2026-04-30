@@ -1,3 +1,5 @@
+UPDATE* for Ubuntu 24.04
+
 # [EVEmu](https://evemu.dev) - An EVE Online Emulator
 
 <p align="center">
