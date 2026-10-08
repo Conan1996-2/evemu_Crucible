@@ -18,9 +18,7 @@ sudo apt install -y git build-essential autoconf automake libtool pkg-config lib
 make -j(cpu count)
 make install
 cd ../sql
-
-*run python3 script (clean_eve_sql.py) to remove "PAGE_CHECKSUM=0", "TRANSACTIONAL=0" for newer mysql versions
-
+python3 clean_eve_sql.py
 ./get_evedbtool.sh
 ./evedbtool
 ./evedbtool install
